@@ -4,7 +4,7 @@ A CLI tool to create event certicates automatically using PPTX templates and lis
 
 ## Requirements
 
-- Libre Office (for PDF generation)
+- [Libre Office](https://pt-br.libreoffice.org/) (for PDF generation)
 
 ## Install
 
