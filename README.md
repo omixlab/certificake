@@ -9,7 +9,7 @@ A CLI tool to create event certicates automatically using PPTX templates and lis
 ## Install
 
 ```
-$ pip install certificake
+$ pip install git+https://github.com/omixlab/certificake
 ```
 
 ## Usage
