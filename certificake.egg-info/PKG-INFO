@@ -1,3 +1,16 @@
+Metadata-Version: 2.1
+Name: certificake
+Version: 0.0.1
+Summary: A CLI tool to create event certicates automatically using PPTX templates and lists of participants CSV/XLSX file
+Author: Frederico Schmitt Kremer
+Author-email: fred.s.kremer@gmail.com
+Keywords: office
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: openpyxl
+Requires-Dist: python-pptx
+Requires-Dist: jinja2
+
 # Certificake 🍰
 
 A CLI tool to create event certicates automatically using PPTX templates and lists of participants CSV/XLSX file.
@@ -29,6 +42,4 @@ might be rendered different on other programs (eg: Microsoft Powerpoint).
 
 - Avoid using spaces, special symbols or fields starting with numbers on the CSV/XLSX file containg the
 data to be included on the certificates (`--data`). In case of field with more than one word, use underscores (eg: "full_address" instead of "full address").
-
-- Jinja2 is used to perform the string interpolation. Therefore, follow the syntax "{{ field_name }}" whenever you have to replace the field with the respective value of interest.
 

@@ -47,9 +47,9 @@ def generate_pdf(pptx_file):
 def main():
 
     arguments_parser = argparse.ArgumentParser()
-    arguments_parser.add_argument('--template', help="A PPTX file containing the certificate template")
-    arguments_parser.add_argument('--data', help='A CSV/XLSX file containing the participants data')
-    arguments_parser.add_argument('--output', required="The output directory (will be created with doesn't exist)")
+    arguments_parser.add_argument('--template', help="A PPTX file containing the certificate template", required=True)
+    arguments_parser.add_argument('--data', help='A CSV/XLSX file containing the participants data', required=True)
+    arguments_parser.add_argument('--output', required="The output directory (will be created with doesn't exist)", required=True)
     arguments_parser.add_argument('--pdf', action='store_true', help='Save as PDF (default is PPTX)')
 
     arguments = arguments_parser.parse_args()
