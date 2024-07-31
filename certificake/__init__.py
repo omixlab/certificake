@@ -1,5 +1,6 @@
 from pptx import Presentation
 from jinja2 import Environment, BaseLoader
+import sys
 import argparse
 import subprocess
 import pandas as pd
@@ -29,12 +30,18 @@ def generate_certificate(template_file, data, output_base, pdf=False):
     prs.save(output_pptx_repr)
 
     if pdf:
-        current_dir = os.getcwd()
-        output_dir = os.path.dirname(output_pptx_repr)
-        output_pptx_repr_basename = os.path.basename(output_pptx_repr)
-        os.chdir(output_dir)
+        generate_pdf(output_pptx_repr)
+
+def generate_pdf(pptx_file):
+    current_dir = os.getcwd()
+    output_dir = os.path.dirname(pptx_file)
+    output_pptx_repr_basename = os.path.basename(pptx_file)
+    os.chdir(output_dir)
+    if sys.platform == "darwin":
+        subprocess.call(f'/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --invisible --convert-to pdf {output_pptx_repr_basename}', shell=True)
+    else:
         subprocess.call(f'libreoffice --headless --invisible --convert-to pdf {output_pptx_repr_basename}', shell=True)
-        os.chdir(current_dir)
+    os.chdir(current_dir)
 
 
 def main():
