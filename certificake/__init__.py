@@ -18,8 +18,7 @@ def generate_certificate(template_file, data, output_base, pdf=False):
                     for run in paragraph.runs:
                         text_template = Environment(loader=BaseLoader).from_string(run.text)
                         run.text = text_template.render(**data)
-                        print(run.text)
-
+    
     output_pptx_raw = output_base + '.pptx'
 
     output_pptx_formater = Environment(loader=BaseLoader).from_string(output_pptx_raw)
