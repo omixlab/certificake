@@ -59,7 +59,7 @@ def main():
     if data_file_ext.lower() == '.csv':
         df_data = pd.read_csv(arguments.data)
     
-    elif data_file_ext.lower() == 'xlsx':
+    elif data_file_ext.lower() == '.xlsx':
         df_data = pd.read_excel(arguments.data)
     
     else:
